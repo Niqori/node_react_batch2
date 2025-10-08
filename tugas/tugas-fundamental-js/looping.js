@@ -29,7 +29,8 @@ for ( var angka = 1; angka <= 20 ; angka++){
 
 //TUGAS NOMOR 3
 
-for ( var angka = 1; angka <= 20 ; angka++){
+for ( var angka = 1; angka <= 20 ; angka++)
+    {
     if (angka % 3 === 0 && angka % 2 !== 0){
         console.log(angka," - i love coding")
     }
@@ -42,6 +43,4 @@ for ( var angka = 1; angka <= 20 ; angka++){
     else{
         console.log(angka," - Santai")
     }
-
-
 }
