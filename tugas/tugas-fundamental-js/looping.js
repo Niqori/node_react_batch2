@@ -1,4 +1,6 @@
 var i =1
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 1\n")
 
 console.log("LOOPING PERTAMA")
 while (i<=10){
@@ -10,14 +12,15 @@ while (i<=10){
 
 console.log("LOOPING KEDUA")
 do{
+    i--
     var looping = i*2
     console.log(looping,"- i love coding")
-    
-    i--
-}while(i>0)
+
+}while(i>1)
 
 // TUGAS NOMOR 2
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 2\n")
 for ( var angka = 1; angka <= 20 ; angka++){
     if (angka % 2 == 0){
         console.log(angka," - Angka Genap")
@@ -28,7 +31,8 @@ for ( var angka = 1; angka <= 20 ; angka++){
 }
 
 //TUGAS NOMOR 3
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 3\n")
 for ( var angka = 1; angka <= 20 ; angka++){
     if (angka % 3 === 0 && angka % 2 !== 0){
         console.log(angka," - i love coding")
@@ -44,6 +48,8 @@ for ( var angka = 1; angka <= 20 ; angka++){
     }
 }
 
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 4\n")
 //TUGAS NOMOR 4
 for (var i = 1; i <= 7; i++) {
     var hasil = "";
@@ -55,14 +61,19 @@ for (var i = 1; i <= 7; i++) {
 
 
 //TUGAS NOMOR 5
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 5\n")
 var sentence = "Fullstack Developer"
 
-for (var i=0;i<sentence.length;i++)
+function Konsonan(huruf){
+var hasil =" "
+for (var i=0;i<huruf.length;i++)
 {
-    var char = sentence[i].toLowerCase();
-    if (char !== "a" && char !== "e" && char !== "i" && char !== "o" && char !== "u" && char !== " "){
-    console.log(sentence[i]); // tampilkan huruf aslinya (bisa juga char)
+    var char = huruf[i].toLowerCase();
+    if (!char.match(/[aiueo]/)){ 
+        hasil += huruf[i]
     }
-
 }
+    console.log(hasil)
+}
+Konsonan(sentence)

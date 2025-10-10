@@ -1,5 +1,6 @@
 // TUGAS NOMOR 1
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 1\n")
 var perkenalan = 'Nama saya adalah';
 var nama = "Nailul"
 var kata1 = "saya"
@@ -14,7 +15,8 @@ console.log(perkenalan.concat(" ",nama,'.',kata1," ",kata2," ",kata3," ",kata4,"
 console.log(" ")
 
 // TUGAS NOMOR 2
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 2\n")
 var abjad = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var angka = "0123456789"
 
@@ -32,7 +34,8 @@ console.log("password ke tiga: " + password3);
 console.log(" ")
 
 // TUGAS NOMOR 3 
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 3\n")
 var sentence2 = 'wow JavaScript is so cool';
 
 var FirstWord2 = sentence2.substring(0, 3);
@@ -49,7 +52,8 @@ console.log('Fifth Word: ' + fifthWord2);
 console.log(" ")
 
 // TUGAS NOMOR 4
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 4\n")
 var sentence2 = 'wow JavaScript is so cool';
 
 var FirstWord3 = sentence2.substring(0, 3);
@@ -73,7 +77,8 @@ console.log('Fifth Word: ' + fifthWord2 + ', with lenght :',fifthwordlength);
 console.log(" ")
 
 // TUGAS NOMOR 5
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 5\n")
 // 1. password pertama : HELLO
 var kode1 = abjad.indexOf("H") + "-" + abjad.indexOf("E") + "-" + abjad.indexOf("L") + "-" + abjad.indexOf("L") + "-" + abjad.indexOf("O")
 console.log("kode 1: " + kode1)
@@ -89,7 +94,8 @@ console.log("kode 2:",kode3)
 console.log(" ")
 
 //TUGAS NOMOR 6
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 6\n")
 var pertama = "saya";
 var kedua = "senang";
 var ketiga = "belajar";
@@ -107,7 +113,8 @@ console.log(pertama1+" "+kedua2+" "+ketiga2+" "+keempat1)
 console.log(" ")
 
 //TUGAS NOMOR 7
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 7\n")
 var panjang= "12";
 var lebar = "7";
 var alas = "6";
@@ -127,7 +134,8 @@ console.log("Luas Persegi Panjang =",luaspersegipanjang)
 console.log(" ")
 
 // TUGAS NOMOR 8
-
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 8\n")
 var sisi= " 1 2 ";
 var jariJari= "7.5";
 var sisi1 = Number(sisi.replace(/\s+/g,''));
