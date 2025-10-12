@@ -62,8 +62,7 @@ function sum(numbers) {
 
 console.log("\n","+".repeat(75),"\n")
 console.log("TUGAS NOMOR 6\n")
-console.log("" + "=".repeat(50) + "");
-console.log("--- SOAL 14 ---");
+
 var kumpulanAngka = [
  [1,3,5,7,8,9],
  [4,5,6,2,3,1],
