@@ -125,3 +125,55 @@ sumsung = addProducts(samsung, newProducts)
 
 console.log(sumsung)
 // buatlah sebuah function yang menambahkan dari newProducts
+
+
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 7\n")
+
+function tugasno7(){ 
+let data = ["Bondra", "Medan", 25];
+const [nama, domisili, umur] = data;
+
+const konversiObject = (nama, domisili, umur) => {
+  return {
+    nama,
+    domisili,
+    umur,
+  };
+};
+const result = konversiObject(nama, domisili, umur);
+console.log(result);
+}
+tugasno7()
+
+console.log("\n","+".repeat(75),"\n")
+console.log("TUGAS NOMOR 8\n")
+
+const data1 = [
+  { name: "Ahmad", class: "adonis"},
+  { name: "Regi", class: "laravel"},
+  { name: "Bondra", class: "adonis"},
+  { name: "Iqbal", class: "vuejs" },
+  { name: "Putri", class: "laravel" }
+]
+
+const data2 = [
+    { name: "Yogi", class: "react"},
+    { name: "Fikri", class: "agile"},
+    { name: "Arief", class: "agile"}
+]
+
+const graduate = (...students) => {
+    const result = {};
+    students[0].forEach(({ name, class: className }) => {
+        if (!result[className]) {
+            result[className] = [];
+        }
+        result[className] = [...result[className], name];
+    });
+    
+    return result;
+};
+
+console.log(graduate(data1))
+console.log(graduate(data2))
