@@ -2,73 +2,30 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.listen(port, () => {
-console.log(`App listening on port http://localhost:${port}`)
-})
+//SOAL NOMOR 1
 
-// Konstanta Pi
-const PI = Math.PI;
-
-// --- Fungsi Perhitungan ---
-
-/**
- * Menghitung luas lingkaran (luas alas tabung).
- * @param {number} r Jari-jari
- * @returns {number} Luas lingkaran
- */
-const luasLingkaran = (r) => {
-    return PI * r * r;
-};
-
-/**
- * Menghitung keliling lingkaran (keliling alas tabung).
- * @param {number} r Jari-jari
- * @returns {number} Keliling lingkaran
- */
-const kelilingLingkaran = (r) => {
-    return 2 * PI * r;
-};
-
-/**
- * Menghitung volume tabung.
- * @param {number} r Jari-jari
- * @param {number} t Tinggi
- * @returns {number} Volume tabung
- */
-const volumeTabung = (r, t) => {
-    // Volume = Luas Alas * Tinggi
-    const luasAlas = luasLingkaran(r); 
-    return luasAlas * t;
-};
-
-// --- Route GET ---
-
-// Path harus menyertakan parameter URL untuk jari-jari dan tinggi, misalnya /lingkaran-tabung/7/10
 app.get('/lingkaran-tabung/:r/:t', (req, res) => {
-    // 1. Mengambil nilai dari parameter URL
-    // Wajib diubah menjadi tipe Number karena parameter URL berupa string
+
+    const PI = Math.PI;
+    const luasLingkaran = (r) => { return PI * r * r; };
+    const kelilingLingkaran = (r) => { return 2 * PI * r; };
+    const volumeTabung = (r, t) => { return luasLingkaran(r) * t; };
     const jariJari = parseFloat(req.params.r);
     const tinggi = parseFloat(req.params.t);
 
-    // 2. Validasi input
     if (isNaN(jariJari) || isNaN(tinggi)) {
         return res.status(400).send('Input jari-jari (r) dan tinggi (t) harus berupa angka.');
     }
-
-    // 3. Melakukan perhitungan
     const vol = volumeTabung(jariJari, tinggi).toFixed(2);
     const luasAlas = luasLingkaran(jariJari).toFixed(2);
     const kelilingAlas = kelilingLingkaran(jariJari).toFixed(2);
-
-    // 4. Membuat teks output
     const output = `jariJari : ${jariJari}, tinggi: ${tinggi}, volume tabung : ${vol}, luas alas tabung : ${luasAlas}, keliling alas tabung : ${kelilingAlas}`;
     
-    // 5. Mengirimkan respons
     res.send(output);
 });
 
 
-// --- Route GET untuk Soal 2: /data-orang ---
+// Soal 2
 app.get('/data-orang', (req, res) => {
     // Data yang akan difilter
     let dataOrang = [
@@ -116,9 +73,9 @@ app.get('/data-orang', (req, res) => {
     // Mengubah array objek menjadi string berformat
     const outputText = dataHasilFilter.map((orang, index) => {
         return `${index + 1}. ${orang.name} - Pekerjaan: ${orang.pekerjaan} - Umur: ${orang.umur} Tahun`;
-    }).join('\n'); // Menggunakan <br> untuk baris baru di respons HTML sederhana
+    }).join('\n');
     
-    // 4. Mengirimkan Respons
+
     res.send(outputText);
 });
 
@@ -150,6 +107,7 @@ app.get('/data-orang/:id', (req, res) => {
 // Server mendengarkan pada port yang ditentukan
 app.listen(port, () => {
     console.log(`Server berjalan di http://localhost:${port}`);
+    console.log(`Hitung Tabung: http://localhost:${port}/lingkaran-tabung/:r/:t`)
     console.log(`Coba filter umur: http://localhost:${port}/data-orang?umur=30`);
     console.log(`Coba filter gender: http://localhost:${port}/data-orang?gender=L`);
     console.log(`Coba kedua filter: http://localhost:${port}/data-orang?umur=30&gender=L`);
