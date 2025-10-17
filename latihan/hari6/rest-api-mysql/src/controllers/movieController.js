@@ -117,4 +117,16 @@ const updateMovie = (req,res) =>
     })
 }
 
-module.exports = {createMovie,readMovie,readMovieById,updateMovie}
+const deleteMovie = (req, res) => {
+    let { id } = req.params
+    let queryText = `DELETE FROM movies WHERE id = ${id}`
+    connectionPool.query(queryText, (err, data) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        res.json({'message': 'Movie Was Succesfully Deleted', 'status': 'success'})
+    });
+}
+
+module.exports = {createMovie,readMovie,readMovieById,updateMovie,deleteMovie}
