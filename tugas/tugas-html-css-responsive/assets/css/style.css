@@ -1,0 +1,97 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins";
+    box-sizing: border-box;
+}
+
+/* ---------------------------------- */
+/* 2. Header & Navigation */
+/* ---------------------------------- */
+
+.header{
+    display:flex;
+    position:sticky;
+    justify-content: space-evenly;
+    background-color: white;
+    padding: 15px 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    top : 0;
+    align-items: center;
+    z-index: 100;
+}
+
+.header img{
+    height: 40px;
+    width: auto;
+}
+.header nav ul{
+    display: flex;
+    list-style: none;
+}
+.header nav ul li{
+    margin-left: 30px;
+}
+.header nav ul li a {
+    text-decoration: none;
+    color: #203239;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover,
+.header nav ul li a:focus {
+    color: #007bff; /* Warna biru untuk hover/fokus */
+}
+
+/* ---------------------------------- */
+/* 3. Main Content & Container */
+/* ---------------------------------- */
+main {
+    padding-top: 20px;
+}
+
+#container {
+    max-width: 1100px; /* Batas lebar konten */
+    margin: 20px auto; /* Margin atas/bawah 20px, kiri/kanan auto (tengah) */
+    padding: 0 20px;   /* Padding pengaman di layar kecil */
+}
+
+/* ---------------------------------- */
+/* 4. Hero Section */
+/* ---------------------------------- */
+
+.container_hero{    display: flex;
+    align-items: center;
+    gap: 40px; /* Jarak antara gambar dan teks */
+    padding: 40px 0;
+}
+.container_hero-headline h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.container_hero-headline small {
+    font-size: 1rem;
+    color: #777;
+    display: block;
+    margin-bottom: 15px;
+}
+.container_hero-headline ul{
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+.container_hero-headline ul li a i {
+    font-size: 2rem;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.container_hero-headline ul li a:hover i {
+    transform: scale(1.1);
+    color: #007bff;
+}
