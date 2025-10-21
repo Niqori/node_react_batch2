@@ -10,8 +10,8 @@ app.get('/lingkaran-tabung/:r/:t', (req, res) => {
     const luasLingkaran = (r) => { return PI * r * r; };
     const kelilingLingkaran = (r) => { return 2 * PI * r; };
     const volumeTabung = (r, t) => { return luasLingkaran(r) * t; };
-    const jariJari = parseFloat(req.params.r);
-    const tinggi = parseFloat(req.params.t);
+    const jariJari = req.params
+    const tinggi = req.params
 
     if (isNaN(jariJari) || isNaN(tinggi)) {
         return res.status(400).send('Input jari-jari (r) dan tinggi (t) harus berupa angka.');
