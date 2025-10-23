@@ -4,11 +4,11 @@ const prisma = new PrismaClient()
 
 const createMovie = async(req, res) => {
         
-    let {title, year} = req.body
+    let {title, year,categoryId} = req.body
     try{
         const movies = await prisma.movies.create({
         data: {
-            title,year
+            title,year,categoryId
         },
         })
 
@@ -21,7 +21,7 @@ const createMovie = async(req, res) => {
     } catch(err){
         res.json({
             info:null,
-            message:err,
+            message:err.message,
             status :"failed"
         })
     }

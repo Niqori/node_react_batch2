@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 const createCategory = async(req, res) => {
     let{name} = req.body
     try{
-        const category = await prisma.category.create({
+        const category = await prisma.categories.create({
             data: {
                 name
             }
@@ -29,7 +29,7 @@ const createCategory = async(req, res) => {
 
 const readCategory= async(req,res) =>{
     try{
-        const category=await prisma.category.findMany()
+        const category= await prisma.categories.findMany()
         res.json({
             info:category,
             message: "Category sucessfulli fetch",
@@ -39,7 +39,7 @@ const readCategory= async(req,res) =>{
     } catch(err){
         res.json({
             info :null,
-            message: "Category failed",
+            message: err.message,
             status :"failed"
         })
     }
@@ -50,7 +50,7 @@ const readCategoryById = async(req,res) =>{
     let message, stat, status;
 
     try {
-        const category = await prisma.category.findUnique({
+        const category = await prisma.categories.findUnique({
             where: {
                 id: Number(id)
             }
@@ -88,7 +88,7 @@ let { name } = req.body
     let { id } = req.params
 
     try {
-        const category = await prisma.category.update({
+        const category = await prisma.categories.update({
             where: {
                 id: Number(id),
             },
@@ -116,7 +116,7 @@ let { name } = req.body
 const deleteCategory = async(req, res) => {
     let { id } = req.params
     try{
-    const movies = await prisma.movies.delete({
+    const movies = await prisma.categories.delete({
         where: {
         id: Number(id),
         },

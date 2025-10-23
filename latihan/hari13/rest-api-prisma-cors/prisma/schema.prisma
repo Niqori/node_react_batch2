@@ -20,11 +20,11 @@ model movies {
   year        Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  category    Category? @relation(fields: [categoryId],references: [id])
+  category    categories? @relation(fields: [categoryId],references: [id])
   categoryId  Int?
 }
 
-model Category{
+model categories{
 
   id          Int       @id @default(autoincrement())
   name        String    
