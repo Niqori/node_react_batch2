@@ -6,7 +6,7 @@ const app = express()
 const port = 3000
 
 var corsOptions = {
-origin: process.env.CORS_ALLOW_LIST.split(","),
+origin: process.env.CORS_ALLOW_LIST.split(";"),
 optionsSuccessStatus: 200
 }
 
@@ -16,4 +16,6 @@ app.use('/api', router)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+  console.log(`CORS Allowed List: ${process.env.CORS_ALLOW_LIST}`)
+  console.log(`http://localhost:${port}`)
 })
