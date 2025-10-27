@@ -84,7 +84,7 @@ const readCategoryById = async(req,res) =>{
 
 const updateCategory = async(req,res) =>
 {
-let { name } = req.body
+    let { name } = req.body
     let { id } = req.params
 
     try {

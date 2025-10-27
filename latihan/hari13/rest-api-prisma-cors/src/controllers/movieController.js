@@ -82,7 +82,8 @@ const readMovieById = async(req,res) =>{
 
 const updateMovie = async(req,res) =>
 {
-    let {title,year} = req.body
+    try{
+    let {title,year,categoryId} = req.body
     let {id}=req.params
 
     const movies = await prisma.movies.update({
@@ -90,18 +91,25 @@ const updateMovie = async(req,res) =>
             id: Number(id),
          },
         data: {
-        title,year
+        ...(title && { title }),
+        ...(year && { year: Number(year) }),
+        ...( categoryId && { categoryId }), 
          },
-})
+        });
 
-    connectionPool.query(`UPDATE movies SET titles = '${title}',year = ${year} ,
-        updated_at = NOW() WHERE id=${id}`,(err,data)=>{
-            if (err) {
-            console.error(err);
-            return;
-        }   
-        res.json("Move has been updated")
+    res.json({
+        info: movies,
+        message: "Movie has been updated",
+        status: "success"
     })
+    } catch (err) {
+
+        res.status(500).json({
+            info: null,
+            message: err.message,
+            status: "error"
+        })
+    }
 }
 
 const deleteMovie = async(req, res) => {
@@ -112,13 +120,17 @@ const deleteMovie = async(req, res) => {
         id: Number(id),
         },
     })
-    return
-    }
-    catch(err){
     res.json({
         info: movies,
         message: "Movie has been deleted",
         status: "success"
+    })
+    }
+    catch(err){
+    res.json({
+        info: null,
+        message: "movie failed to delete",
+        status: "failed"
     })
     }
 }

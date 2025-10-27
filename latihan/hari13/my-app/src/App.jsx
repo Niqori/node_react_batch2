@@ -1,18 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import './CRUDaxios.css'
-import CRUDaxios from '../pages/CRUDaxios'
+import CRUDaxios from './pages/CRUDaxios';
+import MainRoutes from './routes/MainRoutes';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-        <CRUDaxios></CRUDaxios>
+      <MainRoutes></MainRoutes>
+      {/* <CRUDaxios></CRUDaxios> */}
     </>
-  )
+  );
 }
 
 export default App
